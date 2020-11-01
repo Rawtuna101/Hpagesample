@@ -42,14 +42,14 @@ hr.star-primary {
     padding: 0;
     max-width: 250px;
     border: 0;
-    border-top: solid 5px;
+    border-top: solid 3px;
     text-align: center;
     overflow: visible;
 }
 
 hr.star-light:after,
 hr.star-primary:after {
-    content: "\f005";
+    content: "\f103";
     display: inline-block;
     position: relative;
     top: -.8em;
@@ -68,11 +68,40 @@ hr.star-light:after {
 }
 
 hr.star-primary {
-    border-color: #{{ site.color.secondary }};
+    border-color: #{{ site.color.custom2 }};
 }
 
 hr.star-primary:after {
-    color: #{{ site.color.secondary }};
+    color: #{{ site.color.custom2 }};
+    background-color: #fff;
+}
+
+hr.star-primary-1 {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 3px;
+    text-align: center;
+    overflow: visible;
+}
+
+hr.star-primary-1:after {
+    content: "\f103";
+    display: inline-block;
+    position: relative;
+    top: -.8em;
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 2em;
+}
+
+hr.star-primary-1 {
+    border-color: #{{ site.color.custom2 }};
+}
+
+hr.star-primary-1:after {
+    color: red;
     background-color: #fff;
 }
 
@@ -80,14 +109,27 @@ hr.star-primary:after {
     margin: 0 auto;
 }
 
+@media(max-width:280px) {
+  header .intro-text .name {
+      display: inline;
+      font-size: 0.5em;
+  }
+
+  header .intro-text .skills {
+      position: relative;
+      bottom: 3rem;
+      left: 2rem;
+  }
+}
+
 header {
     text-align: center;
-    color: #fff;
-    background: #{{ site.color.primary }};
+    color: #787878;
+    background: white;
 }
 
 header .container {
-    padding-top: 100px;
+    padding-top: 150px;
     padding-bottom: 50px;
 }
 
@@ -97,16 +139,21 @@ header img {
 }
 
 header .intro-text .name {
-    display: block;
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 700;
+    transform: translate(0,-7vh);
+    position: relative;
+    bottom: 4rem;
 }
 
 header .intro-text .skills {
-    font-size: 1.25em;
+    display: inline-block;
+    font-size: 1em;
     font-weight: 300;
+    text-align: left;
+
 }
 
 @media(min-width:768px) {
@@ -116,11 +163,15 @@ header .intro-text .skills {
     }
 
     header .intro-text .name {
-        font-size: 4.75em;
+        display: inline;
+        font-size: 1.75em;
+        position: relative;
+        bottom: 5rem;
     }
 
     header .intro-text .skills {
-        font-size: 1.75em;
+        font-size: 1.25em;
+
     }
 }
 
@@ -133,7 +184,7 @@ header .intro-text .skills {
     }
 
     .navbar-fixed-top .navbar-brand {
-        font-size: 2em;
+        font-size: 1.2em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
@@ -185,6 +236,46 @@ section.success {
     background: #{{ site.color.primary }};
 }
 
+.bigwindow{
+    position:relative;
+    border:none;
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.bigwindow:hover{
+    box-shadow: 0 8px 10px 10px gray ;
+}
+
+@media(max-width:639px){
+    .bigwindow{
+        margin:0;
+    }
+}
+.blackwindow {
+    position: absolute;
+    width:100%;
+    height:100%;
+    box-shadow: 0 -3em 5em 10px black inset;
+    background: gray;
+    opacity:.4;
+
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;     
+}
+
+.blackwindow:hover{
+    opacity: 0;        
+}
+
+.main-img{
+    margin:0;
+    object-fit:cover;
+    width:100%;
+    text-align:center;     
+}
+
 @media(max-width:767px) {
     section {
         padding: 75px 0;
@@ -211,15 +302,15 @@ section.success {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    background: rgba({{ site.color.primary-rgb }},.9);
+    opacity: 0.4;
+    background: rgba(0,0,0,1);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
-    opacity: 1;
+    opacity: 0;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption .caption-content {
