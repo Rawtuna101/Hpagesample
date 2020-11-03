@@ -45,7 +45,7 @@
 <script type="text/javascript" src="stopwatch.js"></script>
 </head>
 <body>
-	<div id='box' class="box">
+	<!-- <div id='box' class="box">
     <div id='timerBox' class="timerBox">
       <div id="time" class="time">00:00:00</div>
     </div>
@@ -56,5 +56,61 @@
     </div>
   </div>
 
+  <script>
+    var date = new Date()
+    document.write(date.getMonth())
+  </script> -->
+<!-- <h1 id="clock" style="color:gray;">00:00<br/></h1>
+  <script>
+    var clockTarget = document.getElementById("clock");
+    function clock() {
+      var date = new Date();
+      var clockDate = date.getDate();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+      clockTarget .innerText = clockDate + ':' + hours + ':' + minutes + ':' + seconds;
+    }
+    function init() {
+      clock();
+      setInterval(clock, 1000);
+    }
+    init();
+  </script> -->
+  <h1 id="d-day" style="color:gray;">00:00</h1>
+  <script>
+   //디데이 종료 일자 설정
+   var firstDay = new Date( '2020-11-01T20:39:51' ).getTime();
+   //1초마다 갱신되도록 함수 생성,실행
+   var x = setInterval(function() {
+       // 오늘 날짜 등록
+       var now = new Date().getTime();
+       // 종료일자에서 현재일자를 뺀 시간
+       var distance = now - firstDay;
+       // 각 변수에 일, 시, 분, 초를 등록
+       var d = Math.floor(distance / (1000 * 60 * 60 * 24)) + 1;
+       var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+       var s = Math.floor((distance % (1000 * 60)) / 1000);
+       //id가 d-day인 HTML코드에 내용 삽입
+       document.getElementById("d-day").innerHTML = d +"days " + h + ":" + m + ":" + s;
+   });
+   </script>
+   <script>
+     document.write({{ site.skills }})
+   </script>
+   <!-- <script>
+    var firstDay = new Date('{{ site.todaystart }}').getTime();
+            var x = setInterval(function() {
+                var now = new Date().getTime();
+                var distance = now - firstDay;
+                var d = Math.floor(distance / (1000 * 60 * 60 * 24)) + 1;
+                var h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var s = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("d-day").innerHTML = d +" : " + h + " : " + m + " : " + s;                                    
+                                            
+            });
+</script> -->
 </body>
 </html>

@@ -1,11 +1,14 @@
 # Site settings
 title: RAWTUNA101
-email: hoon2911@gmail.com
+email: sung2918@naver.com
 url: https://github.com/Rawtuna101/rawtuna.github.io
 description: "ART AUCTION"
 keywords: "your keywords, separated by commas"
-skills: ":ART</br> :AUCTION<br/> :)"
+skills: ":ART</br> :SCHEDULER<br/> :)"
 meta_author: 다랑어 대뱃살
+
+# Today-start
+todaystart: 2020-11-01T20:39:51
 
 # Google webmaster tools
 google_verify:
@@ -27,14 +30,14 @@ disqus_shortname: myshortname
 color:
   primary: 18bc9c #80B3FF
   primary-rgb: "1,1,1" #"128,179,255"
-  secondary: ffffff #FD6E8A
+  secondary: 787878 #FD6E8A
   secondary-dark: 233140 #A2122F
   custom1: 787878
   custom2: 787878
 
 # Footer settings
 footer:
-  copyright: Dr. Henry Jekyll
+  copyright: Rawtuna101
   location: Location
   social: Around the Web
   credits: Credits

@@ -3,6 +3,20 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ 
+ @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+SC:wght@300&family=Teko:wght@300;400&display=swap');
+/* font-family: 'Kosugi Maru', sans-serif;
+ font-family: 'Noto Sans SC', sans-serif;
+ font-family: 'Teko', sans-serif; 
+ */
+ 
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+
+.btn-primary{
+     color:#ffffff;
+     background-color:#008bfd;
+     border-color:#{{ site.color.secondary }}
+}
 
 body {
     overflow-x: hidden;
@@ -32,7 +46,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Teko',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -140,7 +154,7 @@ header img {
 
 header .intro-text .name {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Teko',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 1.5em;
     font-weight: 700;
     transform: translate(0,-7vh);
@@ -201,7 +215,7 @@ header .intro-text .skills {
 
 .navbar {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: 'Teko',Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -215,6 +229,10 @@ header .intro-text .skills {
 
 .navbar .navbar-nav li a:focus {
     outline: 0;
+}
+.navbar-default{
+    background-color:#ffffff;
+    border-color:transparent
 }
 
 .navbar-default,
@@ -236,6 +254,13 @@ section.success {
     background: #{{ site.color.primary }};
 }
 
+.displaynone{
+    display:none;
+}
+
+.clocktext {
+    margin:0.2em;
+}
 .bigwindow{
     position:relative;
     border:none;
@@ -244,7 +269,7 @@ section.success {
 }
 
 .bigwindow:hover{
-    box-shadow: 0 8px 10px 10px gray ;
+    box-shadow: 0 8px 2em 10px gray ;
 }
 
 @media(max-width:639px){
@@ -256,10 +281,9 @@ section.success {
     position: absolute;
     width:100%;
     height:100%;
-    box-shadow: 0 -3em 5em 10px black inset;
+    box-shadow: 0 -3em 10em 10px black inset;
     background: gray;
     opacity:.4;
-
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;     
@@ -269,11 +293,26 @@ section.success {
     opacity: 0;        
 }
 
+.blackwindow-contents {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -5vw;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
 .main-img{
     margin:0;
     object-fit:cover;
     width:100%;
     text-align:center;     
+}
+
+.flex-img{
+    box-shadow: 0 0 4px 1px grey;
 }
 
 @media(max-width:767px) {
@@ -286,9 +325,25 @@ section.success {
     }
 }
 
-#portfolio .portfolio-item {
+#portfolio .portfolio-item,
+#portfolio .flex-img {
     right: 0;
     margin: 0 0 15px;
+}
+.portfolio-flex-grid .portfolio-flex-row1 {
+    margin-top: 15px;
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+#portfolio .flex-img {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 49%;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -302,11 +357,12 @@ section.success {
     position: absolute;
     width: 100%;
     height: 100%;
-    opacity: 0.4;
+    opacity: 0.6;
     background: rgba(0,0,0,1);
     -webkit-transition: all ease .5s;
     -moz-transition: all ease .5s;
     transition: all ease .5s;
+    z-index: 3;
 }
 
 #portfolio .portfolio-item .portfolio-link .caption:hover {
@@ -338,7 +394,8 @@ section.success {
 }
 
 @media(min-width:767px) {
-    #portfolio .portfolio-item {
+    #portfolio .portfolio-item,
+    #portfolio .flex-img {
         margin: 0 0 30px;
     }
 }
@@ -363,12 +420,43 @@ section.success {
     }
   }
   /* A large grid might need four columns on widescreen layouts */
-  /* @media (min-width: 1380px) {
+  @media (min-width: 1380px) {
     .portfolio-flex-grid .portfolio-flex-row .portfolio-flex-item {
       flex: 1 0 23.5%;
       max-width: 23.5%;
     }
-  } */
+  }
+ /*custom-flex*/
+ @media (min-width: 640px) {
+    .portfolio-flex-grid .portfolio-flex-row1 {
+      margin-top: 15px;
+      padding-left: 24%;
+      padding-right: 24%;
+      display: flex;
+      flex-flow: row wrap;
+      align-items: stretch;
+      justify-content: space-between;
+      
+    }
+    .portfolio-flex-grid .portfolio-flex-row1 .flex-img {
+      flex: 1 0 19.5%;
+      max-width: 19.5%;
+    }
+  }
+  @media (min-width: 960px) {
+    .portfolio-flex-grid .portfolio-flex-row1 .flex-img {
+      flex: 1 0 32%;
+      max-width: 32%;
+    }
+  }
+  /* A large grid might need four columns on widescreen layouts */
+  @media (min-width: 1380px) {
+    .portfolio-flex-grid .portfolio-flex-row1 .flex-img {
+      flex: 1 0 23.5%;
+      max-width: 23.5%;
+    }
+  }
+
 
 .btn-outline {
     margin-top: 15px;
@@ -470,7 +558,7 @@ footer .footer-below {
     display: inline-block;
     width: 50px;
     height: 50px;
-    border: 2px solid #fff;
+    border: 2px solid #787878;
     border-radius: 100%;
     text-align: center;
     font-size: 20px;
