@@ -10,17 +10,33 @@
                 <div class="bigwindow" >
                     <div class="blackwindow" >
                         <div class="blackwindow-contents"> 
-                            <div id="d-day" style="font-size:10vw;color:white;">00:00</div>
+                            <a href="" id="d-day" style="font-size:8vw;color:white;">00:00</a>
                         </div>                          
                     </div>                    
-                    <img src="img/portfolio/cake.png" class="main-img" alt="">
+                    <img src="http://drive.google.com/uc?export=view&id=1OExtjqmrl2BgJEe0lYvyCHuWBstfJAEt" class="main-img" alt="">
                 </div>
-                    <h3 style="font-family: 'NanumSquare';color:#787878;font-size: 1.2em;">RKGK</h3>
-                    <div class="portfolio-flex-row1" style="font-size: 1rem;">                                                
-                        <img class='flex-img' src="img/portfolio/cake.png">
-                        <img class='flex-img' src="img/portfolio/cake.png">
-                        <img class='flex-img' src="img/portfolio/cake.png">
-                        <img class='flex-img' src="img/portfolio/cake.png">                        
+                    <h3 style="font-family: 'NanumSquare';color:#787878;font-size: 4vmin;">RKGK</h3>
+                    <div class="portfolio-flex-row1" style="font-size: 1rem;">
+                        <div class='flex-img'>
+                            <div class='flex-img-center'>
+                                <img class='in-img' src="http://drive.google.com/uc?export=view&id=17EtxpWJR-wzR2FVeBMe9OkvUIEptSyM-">
+                            </div>
+                        </div>
+                        <div class='flex-img'>
+                            <div class='flex-img-center'>
+                                <img class='in-img' src="http://drive.google.com/uc?export=view&id=1LQK3mFmgtp9m68X33IPs7n_V43WB2-zM">
+                            </div>
+                        </div>
+                        <div class='flex-img'>
+                            <div class='flex-img-center'>
+                                <img class='in-img' src="http://drive.google.com/uc?export=view&id=1eej-pJzLpcxl5IUUwc6MapFm7lLls8UV">
+                            </div>
+                        </div>   
+                        <div class='flex-img'>
+                            <div class='flex-img-center'>
+                                <img class='in-img' src="http://drive.google.com/uc?export=view&id=16QTTAw27On86w-JdC65WfSGjtxyrFtqZ">
+                            </div>
+                        </div>                 
                     </div>     
                 </div>
             </div>               
@@ -55,10 +71,10 @@
                                     <div id = "done{{ post.modal-id }}" style = "display:none;font-family: 'Kosugi Maru';font-size: 1.5em;">終</div>                 
                                 </div>
                             </div>
-                            <img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="{{ post.alt }}">
+                            <img src="img/portfolio/{{ post.img }}" class="img-responsive" alt="준비중">
                             <div style="display:flex;flex-flow:row wrap;justify-content: space-between;margin:5px;">
-                                <img src="img/portfolio/cake.png" style="flex:1 0 49%;max-width: 49%;">
-                                <img src="img/portfolio/cake.png" style="flex:1 0 49%;max-width: 49%;">
+                                <img src="img/portfolio/{{ post.img2 }}" style="flex:1 0 49%;max-width: 49%;max-height: 6.5em;object-fit: cover;" onerror="this.src = 'img/portfolio/ghost_icon.png'">
+                                <img src="img/portfolio/{{ post.img3 }}" style="flex:1 0 49%;max-width: 49%; max-height: 6.5em;object-fit: cover;"onerror="this.src = 'img/portfolio/ghost_icon.png'"">
                             </div>
                             
                         </a>
@@ -109,8 +125,3 @@
             </div>
         </div>
     </section>
-<aside>
-    <section>
-    <h3>TEST</h3>
-    </section>
-</aside>
